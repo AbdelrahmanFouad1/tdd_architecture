@@ -26,7 +26,7 @@ void main() {
         .thenAnswer((_) async => const Right(tNumberTrivia)) ;
 
 
-    final result = await useCase!.execute(number: tNumber);
+    final result = await useCase!(const NumberTriviaParams(number: tNumber));
 
     expect(result, const Right(tNumberTrivia));
 
